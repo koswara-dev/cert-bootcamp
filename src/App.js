@@ -6,7 +6,7 @@ import CertificatePreview from "./pages/CertificatePreview";
 
 function App() {
   return (
-    <div className="container">
+    <div>
       <Router>
         <Routes>
           <Route path="/" element={<UserBootcamp />} />
