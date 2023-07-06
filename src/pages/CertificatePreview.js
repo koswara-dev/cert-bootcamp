@@ -28,6 +28,8 @@ const CertificatePreview = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId]);
 
+  document.title = `Certificate - ${user.name}`;
+
   return (
     <div className="relative">
       <img

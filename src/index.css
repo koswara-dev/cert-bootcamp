@@ -15,3 +15,10 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media print {
+  body {
+    height: 210mm;
+    width: 297mm;
+  }
+}
