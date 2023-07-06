@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Typography } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 
 const TABLE_HEAD = ["Full Name", "Gender", "School", "Course", "Cert Number", ""];
 
@@ -77,15 +78,15 @@ const Table = ({ users, currentPage, totalPages, handlePageChange }) => {
                   </Typography>
                 </td>
                 <td className={classes}>
+                  <Link to={`/preview/${user.ID}`}>
                   <Typography
-                    as="a"
-                    href={`/preview/${user.ID}`}
                     variant="small"
                     color="blue"
                     className="font-medium"
                   >
                     Download
                   </Typography>
+                  </Link>
                 </td>
               </tr>
             ))}

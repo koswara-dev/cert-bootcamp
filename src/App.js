@@ -7,7 +7,7 @@ import CertificatePreview from "./pages/CertificatePreview";
 function App() {
   return (
     <div>
-      <Router>
+      <Router basename="/certificate-bootcamp">
         <Routes>
           <Route path="/" element={<UserBootcamp />} />
           <Route path="/preview/:userId" element={<CertificatePreview />} />

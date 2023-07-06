@@ -1,5 +1,6 @@
 {
   "name": "cert-bootcamp",
+  "homepage": "https://lms.juaracoding.com/certificate-bootcamp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
