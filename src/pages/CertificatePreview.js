@@ -32,10 +32,10 @@ const CertificatePreview = () => {
         alt="Template Certificate"
         className="w-full"
       />
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black text-xl text-center">
-        <p className="mb-2">Nama: {user.name}</p>
-        <p className="mb-2">Email: {user.email}</p>
-        <p>Alamat: {user.address}</p>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-green-600 text-xl text-center">
+        <p className="mb-2 text-6xl font-display pl-10 -mr-40">{user.name}</p>
+        <p className="mb-2 pl-10 -mr-40">Email: {user.email}</p>
+        <p className="pl-10 -mr-40">Alamat: {user.address}</p>
         {/* Tambahkan informasi lainnya sesuai kebutuhan */}
       </div>
     </div>
