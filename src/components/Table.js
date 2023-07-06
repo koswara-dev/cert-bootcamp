@@ -2,7 +2,14 @@ import React from "react";
 import { Card, Typography } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
-const TABLE_HEAD = ["Full Name", "Gender", "School", "Course", "Cert Number", ""];
+const TABLE_HEAD = [
+  "Full Name",
+  "Gender",
+  "School",
+  "Course",
+  "Cert Number",
+  "",
+];
 
 const classes = "p-3 border-b border-blue-gray-50";
 
@@ -79,13 +86,13 @@ const Table = ({ users, currentPage, totalPages, handlePageChange }) => {
                 </td>
                 <td className={classes}>
                   <Link to={`/preview/${user.ID}`}>
-                  <Typography
-                    variant="small"
-                    color="blue"
-                    className="font-medium"
-                  >
-                    Download
-                  </Typography>
+                    <Typography
+                      variant="small"
+                      color="blue"
+                      className="font-medium"
+                    >
+                      Download
+                    </Typography>
                   </Link>
                 </td>
               </tr>
@@ -94,7 +101,7 @@ const Table = ({ users, currentPage, totalPages, handlePageChange }) => {
         </table>
       </Card>
       <div className="my-4">
-        {Array.from({ length: totalPages+3 }, (_, index) => index + 1).map(
+        {Array.from({ length: totalPages + 3 }, (_, index) => index + 1).map(
           (page) => (
             <button
               key={page}
