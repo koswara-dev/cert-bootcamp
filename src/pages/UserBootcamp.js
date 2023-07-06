@@ -17,7 +17,7 @@ const UserBootcamp = () => {
 
   const fetchusers = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/users", {
+      const response = await axios.get("https://lms.juaracoding.com:8080/api/users", {
         params: {
           page: currentPage,
         },
