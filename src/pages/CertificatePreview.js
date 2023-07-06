@@ -7,13 +7,8 @@ import TemplateCertificate from "../assets/images/sertifikat-depan.png";
 const CertificatePreview = () => {
   const { userId } = useParams();
   const [user, setUser] = useState([]);
-  const generateQRCode = (numberCert) => {
-    // Generate QR code dari nomor KTP
-    return `https://example.com/qrcode/${numberCert}`;
-  };
 
   const numberCert = user.number_cert;
-  const qrCodeData = generateQRCode(numberCert);
 
   // Lakukan logika untuk mendapatkan data user berdasarkan ID user
   useEffect(() => {
@@ -45,7 +40,7 @@ const CertificatePreview = () => {
         <p className="mb-2 pl-10 -mr-40">Asal Sekolah: {user.address}</p>
         <p className="mb-2 pl-10 -mr-40">Program Merdeka Belajar: {user.course}</p>
         <div className="w-1/2 float-right -mr-96">
-          <QRCode value={qrCodeData} size={96} />
+          <QRCode value={numberCert} size={96} />
         </div>
         {/* Tambahkan informasi lainnya sesuai kebutuhan */}
       </div>
