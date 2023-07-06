@@ -1,11 +1,19 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import QRCode from "qrcode.react";
 import TemplateCertificate from "../assets/images/sertifikat-depan.png";
 
 const CertificatePreview = () => {
   const { userId } = useParams();
   const [user, setUser] = useState([]);
+  const generateQRCode = (numberCert) => {
+    // Generate QR code dari nomor KTP
+    return `https://example.com/qrcode/${numberCert}`;
+  };
+
+  const numberCert = user.number_cert;
+  const qrCodeData = generateQRCode(numberCert);
 
   // Lakukan logika untuk mendapatkan data user berdasarkan ID user
   useEffect(() => {
@@ -34,8 +42,11 @@ const CertificatePreview = () => {
       />
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-green-600 text-xl text-center">
         <p className="mb-2 text-6xl font-display pl-10 -mr-40">{user.name}</p>
-        <p className="mb-2 pl-10 -mr-40">Email: {user.email}</p>
-        <p className="pl-10 -mr-40">Alamat: {user.address}</p>
+        <p className="mb-2 pl-10 -mr-40">Asal Sekolah: {user.address}</p>
+        <p className="mb-2 pl-10 -mr-40">Program Merdeka Belajar: {user.course}</p>
+        <div className="w-1/2 float-right -mr-96">
+          <QRCode value={qrCodeData} size={96} />
+        </div>
         {/* Tambahkan informasi lainnya sesuai kebutuhan */}
       </div>
     </div>

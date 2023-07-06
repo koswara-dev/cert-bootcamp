@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Typography } from "@material-tailwind/react";
 
-const TABLE_HEAD = ["Full Name", "Gender", "School", ""];
+const TABLE_HEAD = ["Full Name", "Gender", "School", "Course", "Cert Number", ""];
 
 const classes = "p-3 border-b border-blue-gray-50";
 
@@ -56,6 +56,24 @@ const Table = ({ users, currentPage, totalPages, handlePageChange }) => {
                     className="font-normal"
                   >
                     {user.address}
+                  </Typography>
+                </td>
+                <td className={classes}>
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal"
+                  >
+                    {user.course}
+                  </Typography>
+                </td>
+                <td className={classes}>
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal"
+                  >
+                    {user.number_cert}
                   </Typography>
                 </td>
                 <td className={classes}>
