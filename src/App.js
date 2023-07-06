@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import UserBootcamp from "./pages/UserBootcamp";
 import NotFound from "./pages/NotFound";
-import DownloadCertificate from "./pages/DownloadCertificate";
+import CertificatePreview from "./pages/CertificatePreview";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<UserBootcamp />} />
-          <Route path="/download" element={<DownloadCertificate />} />
+          <Route path="/preview/:userId" element={<CertificatePreview />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>

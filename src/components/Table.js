@@ -61,7 +61,7 @@ const Table = ({ users, currentPage, totalPages, handlePageChange }) => {
                 <td className={classes}>
                   <Typography
                     as="a"
-                    href="#"
+                    href={`/preview/${user.ID}`}
                     variant="small"
                     color="blue"
                     className="font-medium"

@@ -5,24 +5,24 @@ import { FaSearch } from "react-icons/fa";
 import { Typography } from "@material-tailwind/react";
 
 const UserBootcamp = () => {
-  const [users, setusers] = useState([]);
+  const [users, setUsers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
-    fetchusers();
+    fetchUsers();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage]);
 
-  const fetchusers = async () => {
+  const fetchUsers = async () => {
     try {
       const response = await axios.get("https://lms.juaracoding.com:8080/api/users", {
         params: {
           page: currentPage,
         },
       });
-      setusers(response.data.data);
+      setUsers(response.data.data);
       setTotalPages(response.data.total_pages);
     } catch (error) {
       // toast.error("Error fetching users");
